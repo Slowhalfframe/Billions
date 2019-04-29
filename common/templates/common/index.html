@@ -1,0 +1,352 @@
+<!doctype html>
+<html>
+<head>
+    {% load static %}
+<meta charset="utf-8">
+<title>首页_杨青个人博客 - 一个站在web前端设计之路的女技术员个人博客网站</title>
+<meta name="keywords" content="个人博客,杨青个人博客,个人博客模板,杨青" />
+<meta name="description" content="杨青个人博客，是一个站在web前端设计之路的女程序员个人网站，提供个人博客模板免费资源下载的个人原创网站。" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="{% static 'common/css/app/base.css' %}" rel="stylesheet">
+<link href="{% static 'common/css/app/index.css' %}" rel="stylesheet">
+<link href="{% static 'common/css/app/m.css' %}" rel="stylesheet">
+<script src="{% static 'common/js/app/jquery.min.js' %}" ></script>
+<script src="{% static 'common/js/app/hc-sticky.js' %}"></script>
+<script src="{% static 'common/js/app/comm.js' %}"></script>
+<!--[if lt IE 9]>
+<script src="{% static 'common/js/app/modernizr.js' %}"></script>
+<![endif]-->
+    <script src="{% static 'common/js/app/index.js' %}"></script>
+</head>
+<body>
+<header id="header">
+  <div class="navbar">
+    <div class="topbox">
+      <p class="welcome">{{ topbox.content }}</p>
+      <div class="searchbox">
+        <div id="search_bar" class="search_bar">
+          <form  id="searchform" action="[!--news.url--]e/search/index.php" method="post" name="searchform">
+            <input class="input" placeholder="想搜点什么呢.." type="text" name="keyboard" id="keyboard">
+            <input type="hidden" name="show" value="title" />
+            <input type="hidden" name="tempid" value="1" />
+            <input type="hidden" name="tbname" value="news">
+            <input type="hidden" name="Submit" value="搜索" />
+            <p class="search_ico"> <span></span></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header-navigation">
+    <nav>
+      <div class="logo">
+          {% if logo.logo_content %}
+          <img src="{{ logo.logo_src }}" alt="">
+          {% else %}{% endif %}
+
+            {% if logo.logo_link %}
+                <a href="{{ logo.logo_link }}">
+            {% else %}<a href="/">{% endif %}
+
+        {% if logo.logo_content %}
+            {{ logo.logo_content }}
+        {% else %}我的博客{% endif %}</a>
+      </div>
+      <h2 id="mnavh"><span class="navicon"></span></h2>
+      <ul id="starlist">
+          {% for n in nav_list %}
+            <li id="menu{{ n.id }}" onmouseenter="show_child_menu({{ n.id }})"><a href="{{ n.link }}">{{ n.name }}</a></li>
+          {% endfor %}
+{#      二级分类可以用 ajax 显示--> 当鼠标移上去的时候发送请求 成功 取消onmouse属性#}
+{#        <li class="menu"><a href="fengmian.html">学无止境</a>#}
+{#          <ul class="sub">#}
+{#            <li><a href="#">慢生活</a></li>#}
+{#            <li><a href="#">美文欣赏</a></li>#}
+{#          </ul>#}
+{#        </li>#}
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="wrapper">
+  <main> 
+    <!--banner begin-->
+    <div class="banner">
+      <div id="banner" class="fader">
+        <li class="slide" ><a href="/news/life/2018-06-17/873.html" title="D设计师博客-一个热爱生活的设计师" target="_blank"><img src="{% static 'common/images/1.jpg' %}"><span class="imginfo">D设计师博客-一个热爱生活的设计师</span></a></li>
+        <li class="slide" ><a href="/news/life/2018-04-27/816.html" title="个人博客，属于我的小世界！" target="_blank"><img src="{% static 'common/images/2.jpg' %}"><span class="imginfo">个人博客，属于我的小世界！</span></a></li>
+        <div class="fader_controls">
+          <div class="page prev" data-target="prev">&lsaquo;</div>
+          <div class="page next" data-target="next">&rsaquo;</div>
+          <ul class="pager_list">
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--banner end-->
+    <div class="bloglist">
+      <ul>
+        <li> <i class="blogpic"><a href="#"><img src="{% static 'common/images/1.jpg' %}" alt=""> </a></i>
+          <dl>
+            <dt><a href="#" target="_blank">个人博客，我为什么要用帝国cms？</a></dt>
+            <dd><span class="bloginfo">选择帝国cms，做一个博客系统，很多人都说是大材小用。确实是有那种感觉，因为cms有很多功能表用不上。但是帝国cms的安装包也就才6M，如果你放一张高清的1920的图，都比这安装包大！我就来说一说我为什么要用帝国cms...</span>
+              <p class="timeinfo"><span class="lanmu"><a href="#" target="_blank">个人博客</a></span><span class="date">2018-07-03</span></p>
+              <a class="read" href="/">阅读更多</a> </dd>
+          </dl>
+        </li>
+        <li> <i class="blogpic"><a href="#"><img src="{% static 'common/images/2.jpg' %}" alt=""> </a></i>
+          <dl>
+            <dt><a href="#" target="_blank">第二届 优秀个人博客模板比赛参选活动</a></dt>
+            <dd><span class="bloginfo">只要你是在校大学生，不管你是新生，还是即将毕业，不管你是前端菜鸟，还是前端大神，只要你会html，这里将会是你展示才能的大平台</span>
+              <p class="timeinfo"><span class="lanmu"><a href="#" target="_blank">个人博客</a></span><span class="date">2018-07-03</span></p>
+              <a class="read" href="/">阅读更多</a> </dd>
+          </dl>
+        </li>
+        <li> <i class="blogpic"><a href="#"><img src="{% static 'common/images/3.jpg' %}" alt=""> </a></i>
+          <dl>
+            <dt><a href="#" target="_blank">D设计师博客-一个热爱生活的设计师</a></dt>
+            <dd><span class="bloginfo">D设计师博客网站，站长是一个80后室内设计师！也是一个机械设计工程师，一边工作一边积累经验，也经常逛技术论坛，发点文章，回复一些技术问题。做过设计论坛，被称为“神”的技术大咖。...</span>
+              <p class="timeinfo"><span class="lanmu"><a href="#" target="_blank">个人博客</a></span><span class="date">2018-07-03</span></p>
+              <a class="read" href="/">阅读更多</a> </dd>
+          </dl>
+        </li>
+        <li> <i class="blogpic"><a href="#"><img src="{% static 'common/images/4.jpg' %}" alt=""> </a></i>
+          <dl>
+            <dt><a href="#" target="_blank">《寻之旅》一个关于旅游，游记的个人博客</a></dt>
+            <dd><span class="bloginfo">《寻之旅》www.searchtrip.cn 这是一个记录游记，旅游分享的个人博客，我们相识于3月份，一句“你可以先不要删我嘛”，还有海绵宝宝的头像，让我对他印象深刻...</span>
+              <p class="timeinfo"><span class="lanmu"><a href="#" target="_blank">个人博客</a></span><span class="date">2018-07-03</span></p>
+              <a class="read" href="/">阅读更多</a> </dd>
+          </dl>
+        </li>
+        <li> <i class="blogpic"><a href="#"><img src="{% static 'common/images/5.jpg' %}" alt=""> </a></i>
+          <dl>
+            <dt><a href="#" target="_blank">个人博客，我为什么要用帝国cms？</a></dt>
+            <dd><span class="bloginfo">选择帝国cms，做一个博客系统，很多人都说是大材小用。确实是有那种感觉，因为cms有很多功能表用不上。但是帝国cms的安装包也就才6M，如果你放一张高清的1920的图，都比这安装包大！我就来说一说我为什么要用帝国cms...</span>
+              <p class="timeinfo"><span class="lanmu"><a href="#" target="_blank">个人博客</a></span><span class="date">2018-07-03</span></p>
+              <a class="read" href="/">阅读更多</a> </dd>
+          </dl>
+        </li>
+        <li> <i class="blogpic"><a href="#"><img src="{% static 'common/images/6.jpg' %}" alt=""> </a></i>
+          <dl>
+            <dt><a href="#" target="_blank">第二届 优秀个人博客模板比赛参选活动</a></dt>
+            <dd><span class="bloginfo">只要你是在校大学生，不管你是新生，还是即将毕业，不管你是前端菜鸟，还是前端大神，只要你会html，这里将会是你展示才能的大平台</span>
+              <p class="timeinfo"><span class="lanmu"><a href="#" target="_blank">个人博客</a></span><span class="date">2018-07-03</span></p>
+              <a class="read" href="/">阅读更多</a> </dd>
+          </dl>
+        </li>
+        <li> <i class="blogpic"><a href="#"><img src="{% static 'common/images/7.jpg' %}" alt=""> </a></i>
+          <dl>
+            <dt><a href="#" target="_blank">D设计师博客-一个热爱生活的设计师</a></dt>
+            <dd><span class="bloginfo">D设计师博客网站，站长是一个80后室内设计师！也是一个机械设计工程师，一边工作一边积累经验，也经常逛技术论坛，发点文章，回复一些技术问题。做过设计论坛，被称为“神”的技术大咖。...</span>
+              <p class="timeinfo"><span class="lanmu"><a href="#" target="_blank">个人博客</a></span><span class="date">2018-07-03</span></p>
+              <a class="read" href="/">阅读更多</a> </dd>
+          </dl>
+        </li>
+        <li> <i class="blogpic"><a href="#"><img src="{% static 'common/images/8.jpg' %}" alt=""> </a></i>
+          <dl>
+            <dt><a href="#" target="_blank">《寻之旅》一个关于旅游，游记的个人博客</a></dt>
+            <dd><span class="bloginfo">《寻之旅》www.searchtrip.cn 这是一个记录游记，旅游分享的个人博客，我们相识于3月份，一句“你可以先不要删我嘛”，还有海绵宝宝的头像，让我对他印象深刻...</span>
+              <p class="timeinfo"><span class="lanmu"><a href="#" target="_blank">个人博客</a></span><span class="date">2018-07-03</span></p>
+              <a class="read" href="/">阅读更多</a> </dd>
+          </dl>
+        </li>
+        <li> <i class="blogpic"><a href="#"><img src="{% static 'common/images/9.jpg' %}" alt=""> </a></i>
+          <dl>
+            <dt><a href="#" target="_blank">个人博客，我为什么要用帝国cms？</a></dt>
+            <dd><span class="bloginfo">选择帝国cms，做一个博客系统，很多人都说是大材小用。确实是有那种感觉，因为cms有很多功能表用不上。但是帝国cms的安装包也就才6M，如果你放一张高清的1920的图，都比这安装包大！我就来说一说我为什么要用帝国cms...</span>
+              <p class="timeinfo"><span class="lanmu"><a href="#" target="_blank">个人博客</a></span><span class="date">2018-07-03</span></p>
+              <a class="read" href="/">阅读更多</a> </dd>
+          </dl>
+        </li>
+        <li> <i class="blogpic"><a href="#"><img src="{% static 'common/images/10.jpg' %}" alt=""> </a></i>
+          <dl>
+            <dt><a href="#" target="_blank">第二届 优秀个人博客模板比赛参选活动</a></dt>
+            <dd><span class="bloginfo">只要你是在校大学生，不管你是新生，还是即将毕业，不管你是前端菜鸟，还是前端大神，只要你会html，这里将会是你展示才能的大平台</span>
+              <p class="timeinfo"><span class="lanmu"><a href="#" target="_blank">个人博客</a></span><span class="date">2018-07-03</span></p>
+              <a class="read" href="/">阅读更多</a> </dd>
+          </dl>
+        </li>
+        <li> <i class="blogpic"><a href="#"><img src="{% static 'common/images/11.jpg' %}" alt=""> </a></i>
+          <dl>
+            <dt><a href="#" target="_blank">D设计师博客-一个热爱生活的设计师</a></dt>
+            <dd><span class="bloginfo">D设计师博客网站，站长是一个80后室内设计师！也是一个机械设计工程师，一边工作一边积累经验，也经常逛技术论坛，发点文章，回复一些技术问题。做过设计论坛，被称为“神”的技术大咖。...</span>
+              <p class="timeinfo"><span class="lanmu"><a href="#" target="_blank">个人博客</a></span><span class="date">2018-07-03</span></p>
+              <a class="read" href="/">阅读更多</a> </dd>
+          </dl>
+        </li>
+        <li> <i class="blogpic"><a href="#"><img src="{% static 'common/images/12.jpg' %}" alt=""> </a></i>
+          <dl>
+            <dt><a href="#" target="_blank">《寻之旅》一个关于旅游，游记的个人博客</a></dt>
+            <dd><span class="bloginfo">《寻之旅》www.searchtrip.cn 这是一个记录游记，旅游分享的个人博客，我们相识于3月份，一句“你可以先不要删我嘛”，还有海绵宝宝的头像，让我对他印象深刻...</span>
+              <p class="timeinfo"><span class="lanmu"><a href="#" target="_blank">个人博客</a></span><span class="date">2018-07-03</span></p>
+              <a class="read" href="/">阅读更多</a> </dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+    <!--bloglist end--> 
+  </main>
+  <aside class="sidebar">
+    <div class="fenlei">
+      <ul class="flnav">
+        <li class="flselect"><a href="#" title="最新文章" class="pall"></a></li>
+        <li><a href="#" title="站长推荐" class="pgood"></a></li>
+        <li><a href="#" title="点击排行" class="pbro"></a></li>
+        <li><a href="#" title="头条关注" class="pfav"></a></li>
+      </ul>
+    </div>
+    <div class="newstw">
+      <ul class="sidenews">
+        <h2>最新文章</h2>
+        <li> <i><img src="{% static 'common/images/1.jpg' %}"></i>
+          <p><a href="/">别让这些闹心的套路，毁了你的网页设计</a></p>
+          <span>2018-05-13</span> </li>
+        <li> <i><img src="{% static 'common/images/2.jpg' %}"></i>
+          <p><a href="/">给我模板PSD源文件，我给你设计HTML！</a></p>
+          <span>2018-05-13</span> </li>
+        <li> <i><img src="{% static 'common/images/3.jpg' %}"></i>
+          <p><a href="/">html5个人博客模板《More》</a></p>
+          <span>2018-05-13</span> </li>
+        <li> <i><img src="{% static 'common/images/4.jpg' %}"></i>
+          <p><a href="/">html5古典个人博客模板《青砖屋檐》</a></p>
+          <span>2018-05-13</span> </li>
+        <li> <i><img src="{% static 'common/images/5.jpg' %}"></i>
+          <p><a href="/">html5个人博客模板主题《心蓝时间轴》</a></p>
+          <span>2018-05-13</span> </li>
+      </ul>
+      <ul class="sidenews">
+        <h2>站长推荐</h2>
+        <li> <i><img src="{% static 'common/images/6.jpg' %}"></i>
+          <p><a href="/">别让这些闹心的套路，毁了你的网页设计</a></p>
+          <span>2018-05-13</span> </li>
+        <li> <i><img src="{% static 'common/images/7.jpg' %}"></i>
+          <p><a href="/">给我模板PSD源文件，我给你设计HTML！</a></p>
+          <span>2018-05-13</span> </li>
+        <li> <i><img src="{% static 'common/images/8.jpg' %}"></i>
+          <p><a href="/">别让这些闹心的套路，毁了你的网页设计</a></p>
+          <span>2018-05-13</span> </li>
+        <li> <i><img src="{% static 'common/images/9.jpg' %}"></i>
+          <p><a href="/">给我模板PSD源文件，我给你设计HTML！</a></p>
+          <span>2018-05-13</span> </li>
+        <li> <i><img src="{% static 'common/images/10.jpg' %}"></i>
+          <p><a href="/">给我模板PSD源文件，我给你设计HTML！</a></p>
+          <span>2018-05-13</span> </li>
+      </ul>
+      <ul class="sidenews">
+        <h2>点击排行</h2>
+        <li> <i><img src="{% static 'common/images/1.jpg' %}"></i>
+          <p><a href="/">别让这些闹心的套路，毁了你的网页设计</a></p>
+          <span>2018-05-13</span> </li>
+        <li> <i><img src="{% static 'common/images/2.jpg' %}"></i>
+          <p><a href="/">给我模板PSD源文件，我给你设计HTML！</a></p>
+          <span>2018-05-13</span> </li>
+        <li> <i><img src="{% static 'common/images/3.jpg' %}"></i>
+          <p><a href="/">html5个人博客模板《More》</a></p>
+          <span>2018-05-13</span> </li>
+        <li> <i><img src="{% static 'common/images/4.jpg' %}"></i>
+          <p><a href="/">html5古典个人博客模板《青砖屋檐》</a></p>
+          <span>2018-05-13</span> </li>
+        <li> <i><img src="{% static 'common/images/5.jpg' %}"></i>
+          <p><a href="/">html5个人博客模板主题《心蓝时间轴》</a></p>
+          <span>2018-05-13</span> </li>
+      </ul>
+      <ul class="sidenews">
+        <h2>头条关注</h2>
+        <li> <i><img src="{% static 'common/images/12.jpg' %}"></i>
+          <p><a href="/">个人博客《草根寻梦》—手机版模板</a></p>
+          <span>2018-05-13</span> </li>
+        <li> <i><img src="{% static 'common/images/11.jpg' %}"></i>
+          <p><a href="/">安静地做一个爱设计的女子</a></p>
+          <span>2018-05-13</span> </li>
+        <li> <i><img src="{% static 'common/images/10.jpg' %}"></i>
+          <p><a href="/">个人博客，属于我的小世界！</a></p>
+          <span>2018-05-13</span> </li>
+        <li> <i><img src="{% static 'common/images/9.jpg' %}"></i>
+          <p><a href="/">作为一个设计师,如果遭到质疑你是否能恪守自己的原则?</a></p>
+          <span>2018-05-13</span> </li>
+        <li> <i><img src="{% static 'common/images/8.jpg' %}"></i>
+          <p><a href="/">Come on,行动起来吧!我们和时间来一场赛跑!</a></p>
+          <span>2018-05-13</span> </li>
+      </ul>
+    </div>
+    <div class="ad"> <img src="{% static 'common/images/7.jpg' %}"> </div>
+    <div class="about">
+      <h2 class="hometitle">关于本站</h2>
+      <ul>
+        <div class="avatar"> <img src="{% static 'common/images/tx.png' %}" alt=""> </div>
+        <p class="abname">dancesmile | 杨青</p>
+        <p class="abtext"> 一个80后草根女站长！09年入行。一直潜心研究web前端技术，一边工作一边积累经验，分享一些个人博客模板，以及SEO优化等心得。 </p>
+        <li><a class="xlwb" href="#" target="_blank"></a></li>
+        <li><a class="txqq" href="" target="_blank"></a></li>
+        <li><a class="rss" href="" target="_blank"></a></li>
+        <li class="wxpic"><a class="wx" href=""></a><img src="{% static 'common/images/grwx.png' %}"></li>
+      </ul>
+    </div>
+    <div class="tjlm">
+      <h2 class="hometitle">推荐栏目</h2>
+      <ul>
+        <li><a href="about.html">关于我</a></li>
+        <li><a href="share.html">模板分享</a></li>
+        <li><a href="list.html">博客日记</a></li>
+        <li><a href="info.html">慢生活</a></li>
+        <li><a href="time.html">时间轴</a></li>
+        <li><a href="#">美文欣赏</a></li>
+      </ul>
+    </div>
+    <div class="tpjx">
+      <h2 class="hometitle">图片精选</h2>
+      <ul>
+        <li><a href="#"><i><img src="{% static 'common/images/1.jpg' %}"></i><span>个人博客，属于我的小世界！</span></a></li>
+        <li><a href="#"><i><img src="{% static 'common/images/2.jpg' %}"></i><span>个人博客，属于我的小世界！</span></a></li>
+        <li><a href="#"><i><img src="{% static 'common/images/3.jpg' %}"></i><span>个人博客，属于我的小世界！</span></a></li>
+        <li><a href="#"><i><img src="{% static 'common/images/4.jpg' %}"></i><span>个人博客，属于我的小世界！</span></a></li>
+        <li><a href="#"><i><img src="{% static 'common/images/5.jpg' %}"></i><span>个人博客，属于我的小世界！</span></a></li>
+        <li><a href="#"><i><img src="{% static 'common/images/6.jpg' %}"></i><span>个人博客，属于我的小世界！</span></a></li>
+      </ul>
+    </div>
+    <div class="links">
+      <h2 class="hometitle">友情链接</h2>
+      <ul>
+          {% for friend_link in friends_link %}
+            <li><a href="{{ friend_link.friends_link }}">{{ friend_link.friends_name }}</a></li>
+          {% endfor %}
+      </ul>
+    </div>
+    <div class="ad"> <img src="{% static 'common/images/8.jpg' %}"> </div>
+  </aside>
+  <!--sidebar end--> 
+</div>
+<!--wrapper end-->
+<footer>
+  <div class="footer">
+    <div class="wxbox">
+      <ul>
+        <li>
+            <img src="{{ footer.contact1 }}">
+            {% if footer.contact1_info %}
+            <span>{{ footer.contact1_info }}</span>
+            {% else %}{% endif %}
+        </li>
+        <li>
+            <img src="{{ footer.contact2 }}">
+            {% if footer.contact2_info %}
+            <span>{{ footer.contact2_info }}</span>
+            {% else %}{% endif %}
+        </li>
+      </ul>
+    </div>
+    <div class="bzjj">
+      <h2>本站简介</h2>
+      <p>{{ footer.jianjie }}</p>
+    </div>
+    <div class="other">
+      <h2>网站版权</h2>
+      <p>{{ footer.copyright }}</p>
+      <p>&nbsp;</p>
+      <p>备案号：{{ footer.record_number }}</p>
+    </div>
+  </div>
+</footer>
+<a href="#" class="cd-top">Top</a>
+</body>
+</html>

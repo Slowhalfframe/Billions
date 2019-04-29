@@ -1,0 +1,185 @@
+ /*@charset "utf-8";*/
+.wrapper { width: 1120px; margin: 130px auto 0; overflow: hidden }
+/*banner*/
+.banner { width: 100%; overflow: hidden; float: left; margin-bottom: 20px }
+.fader { position: relative; width: 100%; padding-top: 40%; font-family: "futura", arial; overflow: hidden; }
+.fader .slide { position: absolute; width: 100%; top: 0; z-index: 1; opacity: 0; height: 100%; }
+.fader .slide img { width: 100%; height: 100%; }
+.fader .prev, .fader .next { position: absolute; height: 80px; line-height: 55px; width: 50px; font-size: 100px; text-align: center; color: #fff; top: 50%; left: 50px; z-index: 4; margin-top: -25px; cursor: pointer; opacity: 0; transition: all 150ms; }
+.fader .next { left: auto; right: 50px; }
+.fader .pager_list { position: absolute; width: 100%; height: 40px; padding: 0; line-height: 40px; bottom: 0; text-align: center; z-index: 4; }
+.fader .pager_list li { display: inline-block; width: 15px; height: 15px; margin: 0 7px; background: #fff; opacity: .3; text-indent: -9999px; border-radius: 999px; cursor: pointer; transition: all 150ms; }
+.fader .pager_list li:hover, .fader .pager_list li.active { opacity: 1; }
+.banner:hover .fader_controls .page.prev { opacity: 0.5; left: 0 }
+.banner:hover .fader_controls .page.next { opacity: 0.5; right: 0 }
+.imginfo { z-index: 9; position: absolute; font-size: 26px; color: #FFF; display: block; overflow: hidden; bottom: 12%; left: 0; right: 0; display: block; background: rgba(0,0,0,.4); padding: 0 40px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
+.bloglist { border: #ddd 1px solid; float: left; overflow: hidden; background: #fff; margin-bottom: 15px; }
+.bloglist ul { padding: 20px 20px 0 20px; overflow: hidden; }
+.bloglist ul li { border-bottom: dashed 1px #e5e5e5; overflow: hidden; padding-bottom: 20px; margin-bottom: 20px }
+.blogpic { float: left; width: 28%; height: 150px; margin-right: 20px }
+.blogpic img { width: 100%; height: 150px; }
+.bloglist dl { height: 150px; position: relative; overflow: hidden; text-overflow: ellipsis; -webkit-box-orient: vertical; display: -webkit-box; -webkit-line-clamp: 3; width: 68%; }
+.bloglist dt { text-overflow: ellipsis; white-space: nowrap; overflow: hidden; font-size: 20px; font-weight: normal; }
+.bloglist dd { color: #989898; margin: 15px 0; display: block; font-size: 14px; line-height: 22px; overflow: hidden; }
+.bloglist .timeinfo { font-size: 12px; position: absolute; left: 0; bottom: 0 }
+.bloglist .timeinfo span:first-child {; border-right: #CCC 1px solid; margin-right: 10px; padding-right: 10px }
+.bloglist .timeinfo .lanmu a { color: #0077dd; }
+.bloglist ul li:hover dt a { color: #0077dd; }
+.bloglist .read { position: absolute; display: block; background: #0077dd; color: #FFF; bottom: 0; right: 0; padding: 5px 8px }
+.sidebar { float: right; width: 28%; overflow: hidden; position: relative; z-index: 1 }
+/*search*/
+.search { border: 1px solid #0077dd; background: #0077dd; position: relative; border-radius: 0 5px 5px 0; }
+.search input.input_submit { border: 0; background: 0; color: #fff; outline: none; position: absolute; top: 10px; right: 8% }
+.search input.input_text { border: 0; line-height: 36px; height: 36px; width: 72%; padding-left: 10px; outline: none }
+/*aside*/
+.newstw ul { display: none }
+.newstw ul:first-child { display: block }
+.fenlei { background: #f8f8f8; height: 41px; line-height: 40px; }
+.flnav { clear: both; border-right: 1px solid #ddd; overflow: hidden }
+.fenlei li { width: 25%; float: left }
+.fenlei li a { display: block; width: 100%; float: left; height: 40px; border-left: 1px solid #ddd; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
+.fenlei .pall { background: url(../../images/all.png) no-repeat center center; }
+.fenlei .pgood { background: url(../../images/good.png) no-repeat center center; }
+.fenlei .pbro { background: url(../../images/browse.png) no-repeat center center; }
+.fenlei .pfav { background: url(../../images/favorites.png) no-repeat center center }
+.fenlei .flselect a.pall { background: url(../../images/allb.png) no-repeat center center #fff; border-bottom: 1px solid #fff; }
+.fenlei .flselect a.pgood { background: url(../../images/goodb.png) no-repeat center center #fff; border-bottom: 1px solid #fff; }
+.fenlei .flselect a.pbro { background: url(../../images/browseb.png) no-repeat center center #fff; border-bottom: 1px solid #fff; }
+.fenlei .flselect a.pfav { background: url(../../images/favoritesb.png) no-repeat center center #fff; border-bottom: 1px solid #fff; }
+/*sidenews*/
+.sidenews { background: #fff; padding: 20px; border: 1px solid #ddd; margin-bottom: 15px }
+.sidenews h2 { font-size: 18px; padding-bottom: 20px; font-weight: normal }
+.sidenews li { margin: 0 0 20px 0; overflow: hidden }
+.sidenews li p { line-height: 24px; color: #888; font-size: 15px; overflow: hidden; text-overflow: ellipsis; -webkit-box-orient: vertical; display: -webkit-box; -webkit-line-clamp: 2; }
+.sidenews li a { color: #48494d; }
+.sidenews li a:hover { color: #00A7EB; }
+.sidenews i { width: 100px; height: 75px; overflow: hidden; display: block; border: #efefef 1px solid; float: left; margin-right: 10px }
+.sidenews img { height: 100%; max-height: 75px; margin: auto; -moz-transition: all .5s ease; -webkit-transition: all .5s ease; -ms-transition: all .5s ease; -o-transition: all .5s ease; transition: all .5s ease; transition: all 0.5s; }
+.sidenews li:hover i img { transform: scale(1.1) }
+.sidenews span { font-size: 12px; color: #9A9A9A; margin-top: 10px; display: block }
+/*ad*/
+.ad { border: #ddd 1px solid; background: #fff; padding: 5px; margin-bottom: 15px; }
+.ad img { max-width: 100%; width: 100%; height: auto; display: block; }
+/*about*/
+.about { border: #ddd 1px solid; background: #fff; margin-bottom: 15px; }
+.hometitle { background: #f8f8f8; font-size: 15px; padding-left: 20px; border-bottom: 1px solid #ddd; height: 38px; line-height: 38px; }
+.about ul { padding: 20px; overflow: hidden }
+.avatar { width: 100px; height: 100px; float: left; margin-right: 15px }
+.avatar img { width: 100%; border: #ddd 1px solid; }
+.abname { color: #3f3f3f; font-weight: bold; font-size: 15px; margin-bottom: 5px; }
+.abtext { color: #9a9a9a; line-height: 26px; border-bottom: #f5f5f5 1px solid; padding-bottom: 20px }
+.about li { width: 25%; margin: 15px 0 0; float: left; }
+.about li a { color: #747F8C; width: 100%; text-align: center; padding-top: 40px; float: left; }
+.about .rss { background: url(../../images/ico_04.png) no-repeat center center; background-size: 40px }
+.about .rss:hover { color: #000; background: url(../../images/ico_04_1.jpg) no-repeat center center; background-size: 40px }
+.about .xlwb { background: url(../../images/ico_05.png) no-repeat scroll center center; background-size: 40px }
+.about .xlwb:hover { color: #000; background: url(../../images/ico_05_1.jpg) no-repeat center center; background-size: 40px }
+.about .wx { background: url(../../images/ico_07.png) no-repeat center center; background-size: 40px }
+.about .wx:hover { color: #000; background: url(../../images/ico_07_1.jpg) no-repeat center center; background-size: 40px }
+.about .wxpic { position: relative }
+.about .wxpic img { display: none; position: absolute; bottom: 55px; right: -10px; width: 100px; }
+.about .wxpic:hover img { display: block; border: #ddd 5px solid }
+.about .txqq { background: url(../../images/ico_06.png) no-repeat center center; background-size: 40px }
+.about .txqq:hover { color: #000; background: url(../../images/ico_06_1.jpg) no-repeat center center; background-size: 40px }
+/*tjlm*/
+.tjlm { border: #ddd 1px solid; background: #fff; margin-bottom: 15px; }
+.tjlm ul { overflow: hidden; padding: 20px }
+.tjlm li { float: left; width: 49.5% !important; margin: 0 -3px -1px 2px; line-height: 28px; text-align: center; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+.tjlm li a { padding: 5px 0; display: block; border: 1px solid #ddd; }
+.tjlm li a:hover { background: #07d; color: #fff !important; border: 1px solid #07d; transition: all .1s ease-in 0s; }
+/*tpjx*/
+.tpjx { border: #ddd 1px solid; background: #fff; margin-bottom: 15px; }
+.tpjx ul { padding: 10px; overflow: hidden }
+.tpjx li { position: relative; float: left; width: 50%; height: 100px; overflow: hidden; }
+.tpjx li i { display: block; overflow: hidden; margin: 5px 2px; }
+.tpjx li img { width: 100%; min-height: 100px; -moz-transition: all .5s ease; -webkit-transition: all .5s ease; -ms-transition: all .5s ease; -o-transition: all .5s ease; transition: all .5s ease; transition: all 0.5s }
+.tpjx li span { display: block; position: absolute; bottom: -5px; margin: 5px 2px; opacity: 0; background: rgba(0,0,0,.7); font-size: 14px; padding: 0 10px; -moz-transition: all .5s ease; -webkit-transition: all .5s ease; -ms-transition: all .5s ease; -o-transition: all .5s ease; transition: all .5s ease; transition: all 0.5s }
+.tpjx li:hover span { opacity: 1; color: #FFF }
+.tpjx li:hover img { transform: scale(1.1) }
+/*links*/
+.links { border: #ddd 1px solid; background: #fff; margin-bottom: 15px; }
+.links ul { padding: 10px; overflow: hidden }
+.links li { width: 47% !important; float: left; border: 1px solid #ddd; line-height: 30px; text-align: center; margin: 3px }
+/*about*/
+.aboutbox { margin-bottom: 15px; }
+.place { background: url(../../images/dw.png) no-repeat left 5px center #FFF; font-size: 14px; font-weight: normal; border: #ddd 1px solid; line-height: 38px; padding-left: 30px; margin-bottom: 10px }
+.abinfos { background: #FFF; padding: 20px; border: #ddd 1px solid; }
+.abinfos h3 { font-size: 18px; padding: 0 0 10px }
+.abinfos p { margin: 0 0 10px }
+/*pagelist*/
+.pagelist { text-align: right; color: #666; width: 100%; clear: both; margin: 25px 0 5px 0; padding-top: 20px }
+.pagelist a { color: #666; margin: 0 2px 10px; border: 1px solid #fff; padding: 5px 10px; background: #FFF; display: inline-block; }
+.pagelist a:hover { color: #0077dd; }
+.pagelist > b { border: 1px solid #0077dd; padding: 5px 10px; background: #0077dd; color: #FFF }
+a.curPage { color: #19585d; font-weight: bold; }
+/*sharelist*/
+.sharelist { background: #fff; overflow: hidden; border: #ddd 1px solid; clear: both; }
+.sharelist ul { overflow: hidden; padding: 20px 10px; position: relative }
+.sharelist ul:before { content: ""; position: absolute; background: #fff; width: 1px; height: 100%; left: 10px }
+.sharelist ul:after { content: ""; position: absolute; background: #fff; width: 100%; height: 1px; bottom: 20px; left: 0; }
+.sharelist li { float: left; width: 27.6%; border-bottom: #ccc 1px solid; border-left: #ccc 1px solid; overflow: hidden; padding: 20px; -moz-transition: all .5s ease; -webkit-transition: all .5s ease; transition: all .5s ease; }
+.sharelist .tpic { width: 100%; height: 150px; overflow: hidden; background: #CCC; }
+.sharelist .tpic img { display: inline-block; width: 100%; min-height: 100%; height: auto; vertical-align: middle; transition: all .5s ease-out .1s; }
+.sharelist li b { display: block; width: 100%; overflow: hidden; height: 30px; line-height: 30px; margin: 10px 0; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
+.sharelist li span { color: #999; overflow: hidden; text-overflow: ellipsis; -webkit-box-orient: vertical; display: -webkit-box; -webkit-line-clamp: 3; font-size: 14px; height: 62px; }
+.sharelist a.ayulan { float: right; color: #333; }
+.sharelist .readmore { margin: 10px 0 0 0; color: #096; display: block; }
+.sharelist .readmore:before { content: "+"; color: #063 }
+.sharelist li:hover { background: #fff; box-shadow: #ccc 1px 1px 8px; }
+.sharelist li:hover img { transform: scale(1.1) }
+/*fengm*/
+.fengm { background: #fff; overflow: hidden; clear: both; border: #ddd 1px solid; margin-bottom: 15px; }
+.fengm h3 { background: #f8f8f8; font-size: 15px; border-bottom: 1px solid #ddd; height: 38px; line-height: 38px; padding: 0 20px }
+.fengm h3 span { font-weight: normal; float: right; font-size: 14px }
+.fengm .fpicbox { padding-left: 15px; clear: both; overflow: hidden }
+.fengm .fpic { width: 32%; overflow: hidden; display: block; float: left; margin: 10px 8px 5px 0; height: 150px; position: relative }
+.fengm .fpic i { position: absolute; font-style: normal; bottom: 0; left: 0; background: rgba(0,0,0,.7); display: block; width: 100%; color: #FFF; padding: 10px 0; opacity: 0; -moz-transition: all .5s ease; -webkit-transition: all .5s ease; -ms-transition: all .5s ease; -o-transition: all .5s ease; transition: all .5s ease; transition: all 0.5s; }
+.fengm .fpic img { width: 100%; -moz-transition: all .5s ease; -webkit-transition: all .5s ease; -ms-transition: all .5s ease; -o-transition: all .5s ease; transition: all .5s ease; transition: all 0.5s; min-height: 150px }
+.fengm .fpic:hover i { opacity: 1 }
+.fengm .fpic:hover img { transform: scale(1.1) }
+.fmnews { margin: 20px; clear: both }
+.fmnews li { background: url(../../images/li.png) no-repeat left center; padding-left: 20px; line-height: 30px;    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; }
+.fmnews li span { float: right; color: #999 }
+.fmnews li:hover a { color: #00A7EB; }
+/*info*/
+.infosbox { border: #ddd 1px solid; overflow: hidden; background: #fff; margin-bottom: 15px }
+.newsview { padding: 0 30px }
+.intitle { line-height: 40px; height: 40px; font-size: 14px; ; border-bottom: #000 2px solid; }
+.intitle a { font-weight: normal; }
+.news_title { font-size: 24px; font-weight: normal; padding: 20px 0; color: #333; }
+.infosbox .bloginfo { width: 100%; overflow: hidden; margin-bottom: 10px; clear: both }
+.infosbox .bloginfo ul { overflow: hidden }
+.infosbox .bloginfo li { float: left; margin-right: 20px }
+.news_about { color: #888888; border: 1px solid #F3F3F3; padding: 10px; margin: 20px auto 15px auto; line-height: 23px; background: none repeat 0 0 #F6F6F6; }
+.news_about strong { color: #38485A; font-weight: 400 !important; font-size: 13px; padding-right: 8px; }
+.news_content { line-height: 24px; font-size: 14px; }
+.news_content p { overflow: hidden; padding-bottom: 4px; padding-top: 6px; word-wrap: break-word; }
+.tags a { background: #F4650E; padding: 3px 8px; margin: 0 5px 0 0; color: #fff; display: block; float: left }
+.tags { width: 100%; overflow: hidden; clear: both }
+.infosbox img { max-width: 620px; height: auto; }
+.share { padding: 20px; }
+.nextinfo { line-height: 24px; width: 100%; overflow: hidden; margin: 20px 0; background: #FFF; }/*��һƪ��һƪ*/
+.nextinfo p { padding: 4px 10px; border-radius: 5px; }
+.nextinfo a:hover { color: #000; text-decoration: underline }
+/*pinglun*/
+.news_pl { margin: 10px 0 20px; width: 100%; overflow: hidden; background: #FFF; }
+.news_pl h2 { border-bottom: #000 2px solid; line-height: 40px; font-size: 14px; padding-left: 10px; color: #000 }
+.diggit { width: 160px; margin: auto; background: #E2523A; color: #fff; box-shadow: 1px 2px 6px 0px rgba(0,0,0,.2); border-radius: 3px; line-height: 40px; text-align: center; }
+.diggit a { color: #fff; }
+#diggnum { margin: 5px; }
+/*otherlink*/
+.otherlink, .xzsm, .ffsm { width: 100%; background: #FFF; border-radius: 10px; overflow: hidden; margin: 20px 0 }
+.otherlink h2 { border-bottom: #000 2px solid; line-height: 40px; font-size: 14px; padding-left: 10px; color: #000 }
+.otherlink ul { margin: 10px 0 }
+.otherlink li { line-height: 24px; height: 24px; display: block; width: 45%; float: left; overflow: hidden; padding-left: 10px; }
+.otherlink li a:hover { text-decoration: underline; color: #000 }
+/*time*/
+.timebox { background: #FFF; padding: 30px }
+.timebox span { position: relative; line-height: 32px; padding-right: 40px; color: #999 }
+.timebox span:after { position: absolute; content: ""; width: 2px; height: 40px; background: #e0dfdf; right: 18px }
+.timebox li { text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
+.timebox li i { position: relative; font-style: normal }
+.timebox li i:before { content: " "; height: 10px; width: 10px; border: 2px solid #cccaca; background: #fff; position: absolute; top: 4px; left: -26px; border-radius: 50%; -webkit-transition: all .5s ease; -moz-transition: all .5s ease; -ms-transition: all .5s ease; -o-transition: all .5s ease; transition: all .5s ease; }
+.timebox li:hover i:before { background: #3690cf }
